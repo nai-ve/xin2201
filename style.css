@@ -229,21 +229,21 @@ section,
 
 
 #img-one {
-    background-image: url(/img/1.jpg);
+    background-image: url("img/1.jpg");
     background-size: cover;
 }
 
 #img-two {
-    background-image: url(/img/3.png);
+    background-image: url("img/3.png");
 }
 
 .content-one {
-    background: url(/img/2.jpg) no-repeat fixed center;
+    background: url("img/2.jpg") no-repeat fixed center;
     background-size: cover;
 }
 
 .content-two {
-    background: url(/img/4.png) no-repeat fixed center;
+    background: url("img/4.png") no-repeat fixed center;
     background-size: cover;
 }
 .information .i1{
@@ -255,7 +255,7 @@ section,
   left: 25px;
 }
 .content-three {
-    background: url(/img/1.jpg) no-repeat fixed center;
+    background: url("img/1.jpg") no-repeat fixed center;
     background-size: cover;
 }
 .content-three h4{

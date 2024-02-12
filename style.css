@@ -1,0 +1,371 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.body {
+      /* 100%窗口高度 */
+      height: 100vh;
+      /* 弹性布局 水平+垂直居中 */
+      display: flex;
+      justify-content: center;
+    overflow-x: hidden;
+}
+            #welcome{
+              width: 70px;
+              height: 25px;
+              border-radius: 3px;
+              background-color: black;
+              color: white;
+              text-align: center;
+              line-height: 35px;
+              font-size: 15px;
+              transition: opacit 1s;
+              opacity: 1;
+               z-index: 1;
+               position: fixed;
+               top:600px;
+               left: 150px;
+            }
+    
+            body.hidden #welcome {
+              opacity: 0;
+            }
+.container {
+    width: 100vw;
+    height: auto;
+}
+/*YC疆域*/
+.text{
+    /* 相对定位 */
+    position: absolute;
+    top: 60px;
+    left: 30px;
+    line-height: 45px;
+    color: #fff;
+    font-size: 40px;
+    /* 字间距 */
+    letter-spacing: 2px;
+    /* 单个字宽度 */
+    width: 55px;
+    /* 不换行 */
+    white-space: nowrap;
+    /* 溢出隐藏 */
+    overflow: hidden;
+    /* 自定义属性(变量),通过var函数进行调用,这里用来记录字数(6个字,根据你的实际字数而定) */
+    --count: 6;
+    /* 执行动画: 动画名 时长 分步过渡(这里分6步) 停留在最后一帧 */
+    /* 时长要根据字数而定,字数多的话要适当延长 */
+    animation: typing 1.8s steps(var(--count)) forwards;
+    /* 加个倒影可能会比较好看 */
+    -webkit-box-reflect: below 1px linear-gradient(transparent 30%,rgba(0,0,0,0.05));
+}
+/* 光标 */
+.text::after{
+    content: "";
+    width: 2px;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: #fff;
+    /* 执行光标动画: 动画名 时长 线性的 无限次播放 */
+    animation: blink 1s linear infinite;
+}
+
+/* 定义动画 */
+/* 光标闪烁 */
+@keyframes blink {
+    0%,49%{
+        opacity: 0;
+    }
+    50%,100%{
+        opacity: 1;
+    }
+}
+/* 打字动画 */
+@keyframes typing {
+    0%{
+        width: 0;
+    }
+    100%{
+        /* 计算字全部显示完的宽度,65px表示单个字宽度 */
+        width: calc(var(--count) *45px);
+    }
+}
+/*高二一班*/
+p {
+    transition: opacity 1s ease-in-out;
+    opacity: 0;
+    width: 125px;
+    position: absolute;
+    top: 240px;
+    left: 120px;
+   color: #FFFFFF;
+    font-size: 20px;
+    text-decoration: underline 1px;
+}
+
+ p {
+    animation: slide-in 1s ease-in-out forwards;
+}
+
+@keyframes slide-in {
+    0% {
+        opacity: 0;
+        transform: translateY(100%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+ h4{
+    line-height: 55px;
+  position: absolute;
+  top: 450px;
+  width:300px;
+    left: 20px;
+      color: #fff;
+      font-size: 40px;
+      /* 字间距 */
+      letter-spacing: 10px;
+      /* 转大写 */
+      text-transform: uppercase;
+      outline: none;
+      /* 自定义属性--c，可通过var函数对其调用 */
+      --c:lightseagreen;
+      /* 调用自定义属性--c，设置文字阴影（发光效果） */
+      text-shadow: 0 0 10px var(--c),
+      0 0 20px var(--c),
+      0 0 40px var(--c),
+      0 0 80px var(--c),
+      0 0 160px var(--c);
+      /* 执行动画：动画名 时长 线性的 无限次播放 */
+      animation: animate 5s linear infinite;
+}
+
+/* 定义动画 */
+@keyframes animate {
+    to{
+        /* 色相旋转滤镜（设置度数可改变颜色） */
+        filter: hue-rotate(360deg);
+    }
+}
+/*箭头*/
+  .arrows-body{
+    position: absolute;
+    top: 530px;
+    left: 275px;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   transform: rotate(-90deg);
+  }
+  .arrow{
+    position: relative;
+    width: 30px;
+    height: 30px;
+    border-top: 6px solid #0040FF;
+    border-left: 6px solid #0040FF;
+    transform: rotate(-45deg);
+    animation: arrow-load 2s infinite;
+  }
+  .arrow:nth-child(1){
+    left: 25px;
+    animation-delay:-0.4s;
+  }
+  .arrow:nth-child(2) {
+    animation-delay: -0.2s;
+  }
+  .arrow:nth-child(3) {
+    right: 25px;
+  }
+  @keyframes arrow-load{
+    0%{
+      opacity: 0;
+      transform: rotate(-45deg) translate(60px,60px)
+    }
+    0% {
+      opacity: 0;
+      }
+        0%{
+          opacity: 0;
+          transform: rotate(-45deg) translate(60px, 60px)
+        }
+  }
+/*内容*/
+section,
+#footer {
+    height: 100vh;
+    position: relative;
+    color: #FFFFFF;
+    /* 弹性布局 */
+    display: flex;
+    /* 水平居中 */
+    justify-content: left;
+    /* 垂直居中 */
+    align-items: center;
+}
+
+#footer {
+    background-color: #DEDEDE;
+    height: 30vh;
+    color:  #000107;
+}
+
+.img {
+    overflow: hidden;
+    /* 背景图片不重复 */
+    background-repeat: no-repeat;
+    /* 背景图片位置：居中 */
+    background-position: center;
+    /* 背景图片固定 */
+    background-attachment: fixed;
+    background-size: cover;
+    /* 禁止用户误选中 */
+    user-select: none;
+}
+
+
+#img-one {
+    background-image: url(/img/1.jpg);
+    background-size: cover;
+}
+
+#img-two {
+    background-image: url(/img/3.png);
+}
+
+.content-one {
+    background: url(/img/2.jpg) no-repeat fixed center;
+    background-size: cover;
+}
+
+.content-two {
+    background: url(/img/4.png) no-repeat fixed center;
+    background-size: cover;
+}
+.information .i1{
+  color: white;
+  line-height: 40px;
+  width: 87%;
+  position: absolute;
+  top: 160px;
+  left: 25px;
+}
+.content-three {
+    background: url(/img/1.jpg) no-repeat fixed center;
+    background-size: cover;
+}
+.content-three h4{
+  text-align: center;
+  position: absolute;
+  top: 350px;
+}
+.coutent-three .out{
+  width:200px;
+  height: 15px;
+}
+
+        /* 图片表格 */
+        .image-table { 
+            display:flex;
+            flex-direction: row;
+            width: 100%;
+            justify-content: space-between;
+           overflow-x: auto;/*悬浮*/
+           margin-top:-440px;
+        }
+
+        .image-table img {
+            width: 250px;
+            height: 160px;
+          border-radius: 15px;
+          margin-right: 5px;
+          margin-left: 10px;
+        }
+.text-box {
+    width: 100%;
+    height: 60%;
+    /* 绝对定位 */
+    position: absolute;
+    bottom: 35%;
+    /* 文字居中 */
+    text-align: center;
+    background-color: rgba(0, 0, 0, .3);
+    /* 旋转中心 */
+    transform-origin: center bottom;
+    /* 扭曲斜切 */
+    transform: skew(0, -8deg);
+
+}
+
+.text-box .cnt {
+    display: inline-block;
+    text-align: right;
+    margin: 40px 0 10px;
+    width: 90%;
+    max-width: 990px;
+    transform-origin: right bottom;
+    transform: skew(0, 8deg);
+}
+
+.cnt h2 {
+    margin-top: 100px;
+    font-size: 36px;
+    font-family: 'modern_no._20regular',
+        serif;
+    text-shadow: 1px 0px 0px #323232;
+    letter-spacing: 0.3em;
+    /* 大写字母 */
+    text-transform: uppercase;
+    color: #fff;
+    margin-top: 35px;
+}
+.cnt h3{
+  margin-top: 20px;
+  line-height: 40px;
+}
+.cnt h6{
+  font-size: 18px;
+  margin-top: 10px;
+}
+.cnt h5{
+  margin-top: 55px;
+  font-size: 20px;
+}
+.cnt p {
+    font-size: 20px;
+    line-height: 1.7;
+    margin-bottom: 150px;
+    color: #fff;
+}
+.cnt a.btn {
+    font-size: 80%;
+    font-family: 'modern_no._20regular',
+        serif;
+    letter-spacing: 0.3em;
+    text-shadow: 1px 0px 0px black;
+    line-height: 2.8;
+    display: inline-block;
+    background-color: #eaeaea;
+    color: #000;
+    border: 3px solid #000;
+    white-space: nowrap;
+    text-decoration: none;
+    padding: 0 30px;
+    margin-left: -155px;
+    position: relative;
+}
+/*底部导航栏*/
+.last{
+  font-style: normal;
+  underline: none;
+  font-size: 15px;
+  position: absolute;
+  top: 3480px;
+  color: #000000;
+  margin-left: 10px;
+  text-align: left;
+}
